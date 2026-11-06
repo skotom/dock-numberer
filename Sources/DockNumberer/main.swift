@@ -8,7 +8,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
         statusItem.button?.image = NSImage(systemSymbolName: "command.square",
-                                           accessibilityDescription: "DockKeys")
+                                           accessibilityDescription: "Dock Numberer")
         let menu = NSMenu()
         menu.delegate = self
         statusItem.menu = menu
@@ -44,7 +44,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         login.state = SMAppService.mainApp.status == .enabled ? .on : .off
         menu.addItem(login)
         menu.addItem(.separator())
-        menu.addItem(withTitle: "Quit DockKeys", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
+        menu.addItem(withTitle: "Quit Dock Numberer", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
     }
 
     @objc private func toggleLogin() {
@@ -52,7 +52,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         do {
             if service.status == .enabled { try service.unregister() } else { try service.register() }
         } catch {
-            NSLog("DockKeys: launch-at-login failed: \(error)")
+            NSLog("Dock Numberer: launch-at-login failed: \(error)")
         }
     }
 }

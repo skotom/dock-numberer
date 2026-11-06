@@ -1,4 +1,4 @@
-# DockKeys
+# Dock Numberer
 
 A tiny native macOS (Apple Silicon) menu bar app: press **⌘1 … ⌘9** to open the first nine apps pinned in your Dock, and **⌘0** to open the tenth.
 
@@ -10,10 +10,10 @@ Requires the Xcode Command Line Tools (`xcode-select --install`). The full Xcode
 
 ```bash
 ./scripts/build-app.sh
-open build/DockKeys.app
+open build/DockNumberer.app
 ```
 
-To install, copy `build/DockKeys.app` into `/Applications`, then enable **Launch at Login** from the menu bar icon.
+To install, copy `build/DockNumberer.app` into `/Applications`, then enable **Launch at Login** from the menu bar icon.
 
 ## How it works
 
@@ -25,4 +25,4 @@ The Dock is re-read on every key press, so rearranging the Dock takes effect imm
 
 ## Note
 
-While DockKeys is running, it takes over ⌘1…⌘0 in every app, so shortcuts like browser tab switching stop working. Snap behaves the same way.
+While Dock Numberer is running, it takes over ⌘1…⌘0 in every app, so shortcuts like browser tab switching stop working. Snap behaves the same way.
